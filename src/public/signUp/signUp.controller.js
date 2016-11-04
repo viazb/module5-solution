@@ -11,7 +11,7 @@ function SignupController( SignupService, $http, ApiPath ) {
   var $service = SignupService;
 
   $ctrl.message = "";
-  $ctrl.dish = false;
+  $ctrl.dish = true;
   $ctrl.basePath = ApiPath;
   $ctrl.firstName = "";
   $ctrl.lastName = "";

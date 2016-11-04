@@ -1,8 +1,8 @@
 <div class="container">
   <h1 id="home-title" class="text-center">Registrese</h1>
-  <div>
+  <div class="text-center">
     Porfavor ingrese sus datos para recibir las mejores ofertas.
-    <form name="singForm" novalidate>
+    <form name="regForm" class="text-center" novalidate="">
       <br>
       <label for="firstName">Nombre: </label>
       <input type="text"
@@ -12,12 +12,12 @@
         minlength=2
         ng-maxlength=10
         required>
-      <span ng-if="singForm.firstName.$error.required && singForm.firstName.$touched">Ingrese su nombre
+      <span ng-if="regForm.firstName.$error.required && regForm.firstName.$touched">Ingrese su nombre
       </span>
-      <span ng-if="singForm.firstName.$error.minlength && singForm.firstName.$touched">
+      <span ng-if="regForm.firstName.$error.minlength && regForm.firstName.$touched">
         Es demasiado corto(minimo 2 letras)
       </span>
-      <span ng-if="singForm.firstName.$error.maxlength && singForm.firstName.$touched">
+      <span ng-if="regForm.firstName.$error.maxlength && regForm.firstName.$touched">
         Es demasiado largo(maximo 10 letras)
       </span>
       <br>
@@ -29,13 +29,13 @@
         minlength=2
         ng-maxlength="10"
         required>
-      <span ng-if="singForm.lastName.$error.required && singForm.lastName.$touched">
+      <span ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">
         Ingrese su apellido
       </span>
-      <span ng-if="singForm.lastName.$error.minlength && singForm.lastName.$touched">
+      <span ng-if="regForm.lastName.$error.minlength && regForm.lastName.$touched">
         Es demasiado corto(minimo 2 letras)
       </span>
-      <span ng-if="singForm.lastName.$error.maxlength && singForm.lastName.$touched">
+      <span ng-if="regForm.lastName.$error.maxlength && regForm.lastName.$touched">
         Es demasiado largo(maximo 10 letras)
       </span>
       <br>
@@ -45,7 +45,7 @@
         ng-model="signupCtrl.email"
         placeholder="E-mail Address"
         required>
-      <span ng-if="singForm.email.$invalid && singForm.email.$touched">
+      <span ng-if="regForm.email.$invalid && regForm.email.$touched">
         Ingrese su mail (ej: mail@mail.com)
       </span>
       <br>
@@ -53,29 +53,30 @@
       <input type="text"
         name="phone"
         ng-model="signupCtrl.phone"
-        placeholder="####-###-###"
-        pattern="(\d{4})-(\d{3})-(\d{3})">
-      <span ng-if="singForm.phone.$invalid && singForm.phone.$touched">
-        ingrese su numero telefonico ####-###-### (ej: 1111-111-111)
+        placeholder="###-###-###"
+        pattern="(\d{3})-(\d{3})-(\d{3})">
+      <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+        ingrese su numero telefonico ###-###-### (ej: 111-111-111)
       </span>
       <br>
       <label for="favourite">Plato Favorito: </label>
       <input type="text"
         name="favourite"
-        ng-model="signupCtrl.favourite"
-        placeholder="Plato Favorito"
+        ng-model="signupCtrl.favourite" placeholder="Plato Favorito"
         minlength="2"
         pattern="[a-zA-Z]{1,2}\d{1,2}"
         required>
-      <span ng-if="singForm.favourite.$error.required && singForm.favourite.$touched">
+      <span ng-if="regForm.favourite.$error.required && regForm.favourite.$touched">
         Ingrese su plato Favorito
       </span>
-      <span ng-if="singForm.favourite.$error.pattern && singForm.favourite.$touched">
+      <span ng-if="regForm.favourite.$error.pattern && regForm.favourite.$touched">
        Debe ingresar la letra y el numero del menu (ej: L1)
       </span>
+      <br>
       <span ng-if="!signupCtrl.dish">El menu ingresado no existe</span>
       <br>
-      <input type="submit" value="Sign Up" ng-disabled="singForm.$invalid" ng-click="signupCtrl.signup()">
+      <br>
+      <input type="submit" value="Sign Up" ng-disabled="regForm.$invalid" ng-click="signupCtrl.signup()">
     </form>
     <div ng-if='signupCtrl.message'>{{signupCtrl.message}}</div>
   </div>
