@@ -11,17 +11,16 @@
       <div>
       <div class="menu-item-photo">
         <div>{{regCtrl.menu_item.short_name}}</div>
-        <img class="img-responsive" width="250" height="150" ng-src="{{regCtrl.favourite_image}}" alt="Loading ...">
+        <img class="menu-item-signup" ng-src="{{regCtrl.favourite_image}}">
       </div>
       <div class="menu-item-description">
         <h3 class="menu-item-title">{{regCtrl.menu_item.name}}</h3>
         <p class="menu-item-details">{{regCtrl.menu_item.description}}</p>
-
       </div>
     </div>
     </div>
     <div ng-if='!regCtrl.saved'>
-      No se ha registrado. <a ui-sref="public.signup">Registrese Ahora!</a>
+      No se ha registrado.
     </div>
   </div>
 </div>

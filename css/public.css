@@ -111,13 +111,13 @@ input[disabled=disabled] {
   border: 2px solid #3F0C1F;
   overflow: hidden;
   padding: 0;
-  margin-right: -15px;
+  margin-right: auto;
   margin-left: auto;
   margin-bottom: 20px;
   max-width: 250px;
 }
 .menu-item-photo div {
-  position: absolute;
+  position: relative;
   bottom: 0;
   right: 0;
   width: 80px;
@@ -134,6 +134,7 @@ h3.menu-item-title {
   font-size: .9em;
   font-style: italic;
 }
+
 /* END SINGLE CATEGORY PAGE */
 
 

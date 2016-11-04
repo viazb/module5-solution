@@ -26,7 +26,8 @@ function SignupController( SignupService, $http, ApiPath ) {
     var promise = $http({
       method: "GET",
       url: ($ctrl.basePath + "/menu_items/" + menuItem + ".json")
-    }).then(function(result) {
+    })
+    .then(function(result) {
         $service.signup({
             firstName: $ctrl.firstName,
             lastName: $ctrl.lastName,
