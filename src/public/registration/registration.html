@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 id="home-title" class="text-center">Registration Information</h1>
+  <div class="text-center">
+    <div ng-if='regCtrl.saved'>
+      Nombre : {{regCtrl.firstName}}<br>
+      Apellido: {{regCtrl.lastName}}<br>
+      E-mail Address: {{regCtrl.email}}<br>
+      telefono: {{regCtrl.phone}}<br>
+      Plato Favorito:
+      <br>
+      <div>
+      <div class="menu-item-photo">
+        <div>{{regCtrl.menu_item.short_name}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{regCtrl.favourite_image}}" alt="Loading ...">
+      </div>
+      <div class="menu-item-description">
+        <h3 class="menu-item-title">{{regCtrl.menu_item.name}}</h3>
+        <p class="menu-item-details">{{regCtrl.menu_item.description}}</p>
+
+      </div>
+    </div>
+    </div>
+    <div ng-if='!regCtrl.saved'>
+      No se ha registrado. <a ui-sref="public.signup">Registrese Ahora!</a>
+    </div>
+  </div>
+</div>
